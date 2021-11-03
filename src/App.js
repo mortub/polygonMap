@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Map from './components/Map';
+import CoordinatesForm from './components/CoordinatesForm';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [addPointFlag, setAddPointFlag] = useState(false);
+    const [point, setPoint] = useState([0,0]);
+    const addPointToMap = (long, lat) =>{
+        setAddPointFlag(true);
+        setPoint([long, lat]);
+    }
+    return (
+        <div className='rowC'>
+        <Map setAddPointFlag={setAddPointFlag} point={point} addPointFlag={addPointFlag}/>
+        <CoordinatesForm addPointToMap={addPointToMap}/>
+        </div>
+    )
 }
 
 export default App;
