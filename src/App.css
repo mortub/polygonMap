@@ -37,6 +37,12 @@
   }
 }
 
-.rowC{display:flex; flex-direction:row;}
-.colC{display:flex; flex-direction:column;}
+.rowC{display:flex; flex-direction:row; justify-content: space-evenly ;}
+.colC{display:flex; flex-direction:column; justify-content: space-evenly ; }
 .mapClass {height:500px; width:500px;}
+.formColumns {display:flex; flex-direction:column;}
+input { margin-bottom: 10px; }
+.themeColor{
+  color:burlywood;
+  background-color: white;
+}

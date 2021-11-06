@@ -1,10 +1,12 @@
 import React from 'react';
+import '../App.css';
 
 const FormInput = ({setPosition}) =>{
     return (
-        <input type="text" onChange={setPosition}/>
+        <div>
+            <input type="text" onChange={setPosition} />
+        </div>
     )
-
 }
 
 export default FormInput;

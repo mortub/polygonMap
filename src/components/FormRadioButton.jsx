@@ -1,13 +1,23 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import '../App.css';
 
-const FormRadioButton = ({ name, value }) => {
+const FormRadioButton = ({ name, value, radioButtonValue }) => {
+    const [ checked, setChecked ] = useState()
+
+    useEffect(() =>{
+        if( radioButtonValue === value){
+            setChecked(true);
+        }else{
+            setChecked(false);
+        }
+    },[radioButtonValue]);
+
     return (
-        <>
-            <input type="radio" name={name} value={value}>
-            </input>
-            <label for="html">{value}</label><br></br>
-        </>
+        <div >
+            <input type="radio" name={name} value={value} checked={checked} ></input>
+            <label htmlFor="html" className="themeColor">{value}</label><br></br>
+        </div>
     )
 
 }

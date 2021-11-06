@@ -1,8 +1,12 @@
 import React from 'react';
+import Typography from '@mui/material/Typography';
+import '../App.css';
 
-const FormTitle = ({title}) =>{
+const FormTitle = ({ title }) => {
     return (
-       <h1>{title}</h1>
+        <Typography variant="h3" className="themeColor">
+            {title}
+        </Typography>
     )
 
 }
